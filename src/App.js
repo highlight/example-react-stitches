@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { keyframes, styled } from "./stitches.config";
+import { BrowserRouter, Switch, Route, Link } from "react-router-dom"
 
 function App() {
   const [showGif, setShowGif] = useState(false);
@@ -32,6 +33,34 @@ function App() {
           />
         </div>
       )}
+      <BrowserRouter>
+        <div>
+          <SpecialList>
+            <li>
+              <SpecialLink to="/">home</SpecialLink>
+            </li>
+            <li>
+              <SpecialLink to="/cat">
+                cat
+              </SpecialLink>
+            </li>
+            <li>
+              <SpecialLink to="/dog">dog</SpecialLink>
+            </li>
+          </SpecialList>
+        </div>
+        <Switch>
+          <Route path="/cat">
+            <SpecialImage key="cat" src="https://media.giphy.com/media/jpbnoe3UIa8TU8LM13/giphy.gif" alt="" />
+          </Route>
+          <Route path="/dog">
+            <SpecialImage key="dog" src="https://media.giphy.com/media/pWPc1tEcF2cyk/giphy.gif" alt="" />
+          </Route>
+          <Route path="/">
+            <SpecialImage key="home" src="https://media.giphy.com/media/NCIGx4r8p1TAA/giphy.gif" alt="" />
+          </Route>
+        </Switch>
+      </BrowserRouter>
     </main>
   );
 }
@@ -77,14 +106,27 @@ const ButtonWithPseudoElement = styled(Button, {
 });
 
 const grow = keyframes({
-  from: {transform: 'scale(.75)', opacity: 0},
-  to: {transform: 'scale(1)', opacity: 1}
+  from: { transform: 'scale(.75)', opacity: 0 },
+  to: { transform: 'scale(1)', opacity: 1 }
 })
 
 const SpecialImage = styled("img", {
   borderRadius: '100%',
   border: 'solid 4px $primaryBrand',
   boxShadow: '0 5px 30px -15px $colors$primaryBrand',
-  willChange: 'transform',
-  animation: `${grow} 200ms`
+  willChange: 'transform, opacity',
+  animation: `${grow} 200ms`,
+  width: 400,
+  height: 400,
+  objectFit: 'cover'
 });
+
+const SpecialLink = styled(Link, {
+  color: '$primaryBrand',
+  textDecoration: 'none',
+  fontFamily: 'monospace'
+})
+
+const SpecialList = styled('ul', {
+  padding: 0,
+})
