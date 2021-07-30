@@ -1479,6 +1479,11 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
+"@stitches/react@^0.2.3":
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/@stitches/react/-/react-0.2.3.tgz#b6c791783eb563bccf366ee75ab30dee2470393f"
+  integrity sha512-x8sho2hGD+G58RW/Di4xhd2K5IONLtzHbz3JFx3res6Tc1sWFJsfT+3qZgMVnAgPrFhjEkHkDyvNVVTp5M0BbQ==
+
 "@surma/rollup-plugin-off-main-thread@^1.1.1":
   version "1.4.2"
   resolved "https://registry.yarnpkg.com/@surma/rollup-plugin-off-main-thread/-/rollup-plugin-off-main-thread-1.4.2.tgz#e6786b6af5799f82f7ab3a82e53f6182d2b91a58"
@@ -5394,6 +5399,11 @@ hex-color-regex@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/hex-color-regex/-/hex-color-regex-1.1.0.tgz#4c06fccb4602fe2602b3c93df82d7e7dbf1a8a8e"
   integrity sha512-l9sfDFsuqtOqKDsQdqrMRk0U85RZc0RtOR9yPI7mRVOa4FsR/BVnZ0shmQRM96Ji99kYZP/7hn1cedc1+ApsTQ==
+
+highlight.run@^2.3.2:
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/highlight.run/-/highlight.run-2.3.2.tgz#8910e0737757f5eccf322ee2ffea1e477ee48f43"
+  integrity sha512-f7qOiS06gIYCCavCikJ6/gAJa56ZoQgTppxJLdL+RRKQLym18j0gqP2lrtljESWa0jRHCOkRwemigXYQv0BYHg==
 
 hmac-drbg@^1.0.1:
   version "1.0.1"
