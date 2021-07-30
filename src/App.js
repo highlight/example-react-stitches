@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { styled } from "./stitches.config";
+import { keyframes, styled } from "./stitches.config";
 
 function App() {
   const [showGif, setShowGif] = useState(false);
@@ -26,7 +26,7 @@ function App() {
       </Container>
       {showGif && (
         <div>
-          <img
+          <SpecialImage
             src="https://media.giphy.com/media/BzyTuYCmvSORqs1ABM/giphy.gif"
             alt=""
           />
@@ -74,4 +74,17 @@ const ButtonWithPseudoElement = styled(Button, {
     borderRadius: "inherit",
     zIndex: -1,
   },
+});
+
+const grow = keyframes({
+  from: {transform: 'scale(.75)', opacity: 0},
+  to: {transform: 'scale(1)', opacity: 1}
+})
+
+const SpecialImage = styled("img", {
+  borderRadius: '100%',
+  border: 'solid 4px $primaryBrand',
+  boxShadow: '0 5px 30px -15px $colors$primaryBrand',
+  willChange: 'transform',
+  animation: `${grow} 200ms`
 });
